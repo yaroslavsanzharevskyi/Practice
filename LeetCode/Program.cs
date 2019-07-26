@@ -10,9 +10,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            
-            var lsb = new LongestSubstringWithoutRepeatingCharacters();
-            lsb.LengthOfLongestSubstring("abcabcbb");
+            var md = new MedianOfTwoSortedArrays();
+            md.FindMedianSortedArrays(new[] {1, 3}, new[] {2});
 
         }
     }
