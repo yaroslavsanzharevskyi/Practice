@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms
+﻿namespace LeetCode.Problems
 {
     //public class ContainerWithMostWater
     //{

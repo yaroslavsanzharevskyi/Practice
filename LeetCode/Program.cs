@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices.ComTypes;
 using LeetCode.Algorithms;
+using LeetCode.Problems;
 
 namespace LeetCode
 {
@@ -10,15 +12,9 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var md = new SnailArray();
-            int[][] array =
-            {
-                new []{1, 2, 3},
-                new []{4, 5, 6},
-                new []{7, 8, 9}
-            };
-           
-            md.Snail(array);
+            var single = new SingleNumberInArray();
+
+            single.SingleNumber(new[] {4, 1, 2, 1, 2,2});
         }
     }
 }

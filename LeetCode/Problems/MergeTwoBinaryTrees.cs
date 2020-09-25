@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Text;
+using LeetCode.Structures;
 
 namespace LeetCode.Problems
 {
@@ -23,16 +24,5 @@ namespace LeetCode.Problems
         }
     }
 
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
+   
 }
