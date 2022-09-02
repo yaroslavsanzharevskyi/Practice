@@ -12,9 +12,12 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var single = new SingleNumberInArray();
-
-            single.SingleNumber(new[] {4, 1, 2, 1, 2,2});
+            // Arrange
+            var brackets = "([][]{})";
+            var matcher = new BracketsMatcher();
+            
+            // Act
+            var result = matcher.BracketsMatch(brackets);
         }
     }
 }
