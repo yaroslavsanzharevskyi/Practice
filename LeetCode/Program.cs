@@ -13,7 +13,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
             // Arrange
-            var brackets = "([][]{})";
+            var brackets = "()";
             var matcher = new BracketsMatcher();
             
             // Act

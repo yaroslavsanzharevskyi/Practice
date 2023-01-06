@@ -13,34 +13,37 @@ namespace LeetCode.Problems
             BraketsTypes = new Dictionary<char, char> { { '{', '}' }, { '[', ']' }, { '(', ')' } };
         }
 
-        private int globalIndex = 0;
+        private int pointer = 0;
 
-        public bool BracketsMatch(string incomingBrakets, int previousOpenedIndex = 0)
+        public bool BracketsMatch(string incomingBrakets, int? previousOpenedIndex = null)
         {
-            while (globalIndex < incomingBrakets.Length)
+            if (incomingBrakets.Length % 2 != 0) return false;
+
+            while (pointer < incomingBrakets.Length)
             {
-                if (BraketsTypes.ContainsKey(incomingBrakets[globalIndex]))
+                if (BraketsTypes.ContainsKey(incomingBrakets[pointer]) && pointer < incomingBrakets.Length - 1)
                 {
-                    var currentOpenIndex = globalIndex;
-                    globalIndex++;
-                    if (BracketsMatch(incomingBrakets, currentOpenIndex) == false) return false;
+                    var currentIndex = pointer;
+                    pointer++;
+                    var matched = BracketsMatch(incomingBrakets, currentIndex);
+                    if (!matched) return false;
+
                 }
                 else
                 {
-                    var closingBracket = incomingBrakets[globalIndex];
-                    if (incomingBrakets[previousOpenedIndex] == BraketsTypes.FirstOrDefault(b => b.Value == closingBracket).Key)
+                    var closingBracket = incomingBrakets[pointer];
+                    if(previousOpenedIndex == null) return false;
+                    if (incomingBrakets[(int)previousOpenedIndex] == BraketsTypes.FirstOrDefault(b => b.Value == closingBracket).Key)
                     {
-                        globalIndex++;
+                        pointer++;
                         return true;
                     }
 
                     return false;
                 }
-
-               
             }
 
-            return true;
+            return previousOpenedIndex == 0? true : false;
         }
 
     }
