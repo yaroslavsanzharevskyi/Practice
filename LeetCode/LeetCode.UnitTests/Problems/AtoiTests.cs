@@ -1,7 +1,7 @@
 
 using NUnit.Framework;
 
-namespace LeetCode.Problems;
+namespace LeetCode.Problems.Tests;
 
 [TestFixture]
 public class AtoiTests
