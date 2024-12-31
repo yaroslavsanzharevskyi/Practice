@@ -1,6 +1,5 @@
-using System;
-
 namespace LeetCode.Problems;
+
 public class MergeTwoArrays
 {
    public void Merge(int[] nums1, int m, int[] nums2, int n)

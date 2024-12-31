@@ -1,13 +1,4 @@
-using System.Collections.Generic;
-
 namespace Leetcode.Problems;
-
-public class ListNode
-{
-    public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null) { this.val = val; this.next = next; }
-}
 
 public class SwapPairs
 {
@@ -22,7 +13,7 @@ public class SwapPairs
         {
             return head;
         }
-        
+
         ListNode parent = null;
         var current = head;
         
