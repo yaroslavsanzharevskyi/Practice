@@ -1,8 +1,8 @@
 namespace LeetCode.MergeTwoSortedLists
 {
-    public class Solution
+    public class MergeTwoSortedLists
     {
-        public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        public ListNode Solution(ListNode list1, ListNode list2)
         {
             var head = new ListNode();
             var current = head;

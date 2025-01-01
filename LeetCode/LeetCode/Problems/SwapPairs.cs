@@ -4,19 +4,17 @@ public class SwapPairs
 {
     public ListNode Solution(ListNode head)
     {
-        if (head == null)
+                 if (head == null)
         {
             return null;
         }
-
-        if(head.next == null)
+         if(head.next == null)
         {
             return head;
         }
-
         ListNode parent = null;
         var current = head;
-        
+        head = current.next;
 
         while(current != null)
         {
