@@ -6,18 +6,17 @@ namespace LeetCode.Algorithms
     {
         public int[] TwoSum(int[] nums, int target)
         {
-            var calculated = new Dictionary<int, int>();
+            var pairToFind = new Dictionary<int, int>();
 
             for (var i = 0; i < nums.Length; i++)
             {
-                var val = target - nums[i];
-
-                if (calculated.ContainsKey(nums[i]))
+                if (pairToFind.ContainsKey(nums[i]))
                 {
-                    return new[] {calculated[nums[i]], i};
+                    return new[] { pairToFind[nums[i]], i };
                 }
 
-                calculated[val] = i;
+                var val = target - nums[i];
+                pairToFind[val] = i;
             }
 
             return new int[0];
