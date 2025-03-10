@@ -14,7 +14,6 @@ public class ContainerWithMostWater
             {
                 maxWater = Math.Max(maxWater, (j - i) * height[i]);
                 i++;
-
             }
             else
             {
@@ -22,6 +21,7 @@ public class ContainerWithMostWater
                 j--;
             }
         }
+        
         return maxWater;
     }
 }
