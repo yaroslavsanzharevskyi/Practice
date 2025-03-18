@@ -1,27 +1,27 @@
 namespace LeetCode.Problems.Stack;
 
-public class MinStack {
+// public class MinStack {
 
-    public MinStack() {
+//     public MinStack() {
         
-    }
+//     }
     
-    public void Push(int val) {
+//     public void Push(int val) {
         
-    }
+//     }
     
-    public void Pop() {
+//     public void Pop() {
         
-    }
+//     }
     
-    public int Top() {
+//     public int Top() {
         
-    }
+//     }
     
-    public int GetMin() {
+//     public int GetMin() {
         
-    }
-}
+//     }
+// }
 
 /**
  * Your MinStack object will be instantiated and called as such:
