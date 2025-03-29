@@ -16,28 +16,28 @@ public class ValidPalindrome
 {
     public bool IsValid(string s)
     {
-        if(string.IsNullOrWhiteSpace(s))
+        if (string.IsNullOrWhiteSpace(s))
         {
             return true;
         }
 
         var leftPointer = 0;
-        var rightPointer = s.Length-1;
-  
-        while(leftPointer < rightPointer)
+        var rightPointer = s.Length - 1;
+
+        while (leftPointer < rightPointer)
         {
-            while(leftPointer < rightPointer && !Char.IsLetterOrDigit(s[leftPointer]))
+            while (leftPointer < rightPointer && !Char.IsLetterOrDigit(s[leftPointer]))
             {
                 leftPointer++;
             }
-            while(leftPointer < rightPointer && !Char.IsLetterOrDigit(s[rightPointer]))
+            while (leftPointer < rightPointer && !Char.IsLetterOrDigit(s[rightPointer]))
             {
                 rightPointer--;
             }
 
-           if(Char.ToLower(s[leftPointer]) != Char.ToLower(s[rightPointer]))
+            if (Char.ToLower(s[leftPointer]) != Char.ToLower(s[rightPointer]))
             {
-                 return false;
+                return false;
             }
 
             leftPointer++;
