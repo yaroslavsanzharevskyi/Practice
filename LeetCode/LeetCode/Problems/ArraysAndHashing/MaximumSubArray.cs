@@ -13,11 +13,7 @@ public class MaximumSubArray
             if (curSum < 0) curSum = 0;
 
             curSum += nums[i];
-
-
-
             maxSum = Math.Max(curSum, maxSum);
-
         }
 
         return maxSum;
