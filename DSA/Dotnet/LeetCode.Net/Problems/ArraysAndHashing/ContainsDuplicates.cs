@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LeetCode.Problems;
+namespace DSA.Problems;
 
 public class ContainsDuplicate
 {

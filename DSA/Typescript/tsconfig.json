@@ -12,7 +12,7 @@
   "include": [
     "src/**/*",
     "__tests__/**/*"
-  ],
+, "ArraysAndHashing/has_duplicates.spec.ts"  ],
   "exclude": [
     "node_modules"
   ]

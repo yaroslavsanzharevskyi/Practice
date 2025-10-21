@@ -1,11 +1,9 @@
-
-using LeetCode.Problems;
 using NUnit.Framework;
 
-namespace LeetCode.Problems.Tests;
+namespace DSA.Problems.Tests;
 
 [TestFixture]
-public class ContainsDuplicateTests 
+public class ContainsDuplicateTests
 {
     [TestCase(new[] { 1, 2, 3, 1 }, true)]
     [TestCase(new[] { 1, 2, 3, 4 }, false)]
