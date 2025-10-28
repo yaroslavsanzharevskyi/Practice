@@ -19,21 +19,18 @@ public class ReverseLinkedList
         {
             return null;
         }
-        var currentNode = head;
-        ListNode oldParent = null;
-        while (true)
-        {
-            ListNode next = currentNode.next;
-            currentNode.next = oldParent;
 
-            oldParent = currentNode;
-            if (next == null)
-            {
-                break;
-            }
-            currentNode = next;
+        ListNode prev = null;
+        var current = head;
+
+        while (current != null)
+        {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
         }
 
-        return currentNode;
+        return current;
     }
 }
