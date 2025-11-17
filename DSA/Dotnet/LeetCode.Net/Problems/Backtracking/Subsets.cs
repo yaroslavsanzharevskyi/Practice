@@ -15,7 +15,7 @@ public class FindSubsets
         return Sets.ToList();
     }
 
-    private void Backtracking(int[] nums, int currentIndex, List<int> path)
+    private void Backtracking(int[] nums, int currentIndex,  List<int> path)
     {
         Sets.Add(new List<int>(path));
 
