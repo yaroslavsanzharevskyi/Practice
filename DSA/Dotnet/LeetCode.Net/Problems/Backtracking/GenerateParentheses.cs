@@ -2,7 +2,7 @@ using System.Collections.Generic;
 namespace LeetCode.GenerateParentheses;
 public class Solution
 {
-    private readonly IList<string> res = new List<string>();
+    private readonly List<string> res = new List<string>();
 
     public void GenerateParenthesis(ref int n, int left, int right, string buffer)
     {
@@ -22,7 +22,7 @@ public class Solution
             GenerateParenthesis(ref n, left, right + 1, buffer + ')');
         }
     }
-    public IList<string> GenerateParenthesis(int n)
+    public List<string> GenerateParenthesis(int n)
     {
         GenerateParenthesis(ref n, 0, 0, "");
         return res;
