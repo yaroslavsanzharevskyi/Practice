@@ -8,7 +8,7 @@ public class BinarySearch
         var leftPointer = 0;
         var rightPointer = nums.Length-1;
 
-        while(leftPointer < rightPointer)
+        while(leftPointer <= rightPointer)
         {
             var pointer = leftPointer + (rightPointer-leftPointer) / 2;
 
