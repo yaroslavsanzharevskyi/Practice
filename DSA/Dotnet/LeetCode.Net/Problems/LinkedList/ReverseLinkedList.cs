@@ -31,6 +31,6 @@ public class ReverseLinkedList
             current = next;
         }
 
-        return current;
+        return prev;
     }
 }
