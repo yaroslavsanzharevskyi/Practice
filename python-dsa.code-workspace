@@ -3,5 +3,27 @@
         {
             "path": "DSA/Python"
         }
-    ]
+    ],
+    "settings": {
+        "workbench.colorCustomizations": {
+            "activityBar.activeBackground": "#d6bd41",
+            "activityBar.background": "#d6bd41",
+            "activityBar.foreground": "#15202b",
+            "activityBar.inactiveForeground": "#15202b99",
+            "activityBarBadge.background": "#1c8372",
+            "activityBarBadge.foreground": "#e7e7e7",
+            "commandCenter.border": "#15202b99",
+            "sash.hoverBorder": "#d6bd41",
+            "statusBar.background": "#bca328",
+            "statusBar.foreground": "#15202b",
+            "statusBarItem.hoverBackground": "#927f1f",
+            "statusBarItem.remoteBackground": "#bca328",
+            "statusBarItem.remoteForeground": "#15202b",
+            "titleBar.activeBackground": "#bca328",
+            "titleBar.activeForeground": "#15202b",
+            "titleBar.inactiveBackground": "#bca32899",
+            "titleBar.inactiveForeground": "#15202b99"
+        },
+        "peacock.color": "#bca328"
+    }
 }
