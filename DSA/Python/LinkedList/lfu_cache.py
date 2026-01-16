@@ -16,6 +16,7 @@ class DoublyLinkedList:
     def _remove(self, node:DoublyLinkedNode):
         node.prev.next = node.next
         node.next.prev = node.prev
+        
     def __len__(self) -> int:
         return len(self.cache)
     
