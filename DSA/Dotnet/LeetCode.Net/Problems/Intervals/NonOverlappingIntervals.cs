@@ -6,7 +6,7 @@ public class NonOverlappingIntervals
 {
     public int EraseOverlapIntervals(int[][] intervals)
     {
-        if (intervals.Length == 0)
+        if (intervals.Length <= 1)
         {
             return 0;
         }

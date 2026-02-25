@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using LeetCode.Problems.Intervals;
 using Xunit;
 
@@ -18,6 +19,8 @@ public class NonOverlappingIntervalsTests
     [InlineData("[[1,2],[2,3],[3,4],[1,3]]", 1)]
     [InlineData("[[1,2],[1,2],[1,2]]", 2)]
     [InlineData("[[1,2],[2,3]]", 0)]
+    [InlineData("[[1,4], [2,3], [3,5]]", 1)]
+    [InlineData("[[1,10],[5,15],[10,100],[10,15],[15,25],[25,75]]", 2)]
     [Trait("Category", "BasicCases")]
     public void EraseOverlapIntervals_BasicCases_ReturnsExpectedCount(string intervalsJson, int expected)
     {
@@ -54,31 +57,8 @@ public class NonOverlappingIntervalsTests
 
     private static int[][] ParseIntervals(string json)
     {
-        json = json.Trim();
-        if (json == "[]") return [];
-
-        json = json.Trim('[', ']');
-        var intervalStrings = new List<string>();
-        var depth = 0;
-        var currentInterval = "";
-
-        foreach (var c in json)
-        {
-            if (c == '[') depth++;
-            if (c == ']') depth--;
-
-            currentInterval += c;
-
-            if (depth == 0 && c == ']')
-            {
-                intervalStrings.Add(currentInterval.Trim());
-                currentInterval = "";
-            }
-        }
-
-        return intervalStrings
-            .Where(s => !string.IsNullOrWhiteSpace(s))
-            .Select(s => s.Trim('[', ']').Split(',').Select(int.Parse).ToArray())
+        return Regex.Matches(json, @"\[(-?\d+),(-?\d+)\]")
+            .Select(m => new[] { int.Parse(m.Groups[1].Value), int.Parse(m.Groups[2].Value) })
             .ToArray();
     }
 }
