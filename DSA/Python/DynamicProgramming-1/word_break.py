@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class Solution:
     def wordBreak(self, s: str, wordDict: list[str]) -> bool:
         word_set = set(wordDict)  # Convert wordDict to a set for O(1) lookups

@@ -17,7 +17,7 @@ class Solution:
         
         previous = sorted_intervals[0]
         for i in range(1,len(intervals)):
-            
+
             current = sorted_intervals[i]
             
             if current.start < previous.end:

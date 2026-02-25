@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace LeetCode.Problems.Graphs;
@@ -37,7 +36,7 @@ public class NetworkDelayTime
 
         }
 
-        if(visitedNodes.Count != n) return -1;
+        if (visitedNodes.Count != n) return -1;
 
         return visitedNodes.Values.Max();
     }
