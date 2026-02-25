@@ -1,11 +1,10 @@
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Tests.Problems.BinarySearch;
 
-[TestFixture]
 public class KokoEatingBananasTests
 {
-    [Test]
+    [Fact]
     public void MinEatingSpeed_ShouldReturnCorrectSpeed()
     {
         // Arrange
@@ -18,6 +17,6 @@ public class KokoEatingBananasTests
         var actualSpeed = solution.MinEatingSpeed(piles, h);
 
         // Assert
-        Assert.That(actualSpeed, Is.EqualTo(expectedSpeed));
+        Assert.Equal(expectedSpeed, actualSpeed);
     }
 }

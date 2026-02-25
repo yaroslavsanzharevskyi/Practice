@@ -1,13 +1,13 @@
 
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class TopKFrequentTests
 {
 
-    [TestCase(new int[] { 1, 1, 1, 2, 2, 3, 4, 5, 6 }, 2, new int[] { 1, 2 })]
+    [Theory]
+    [InlineData(new int[] { 1, 1, 1, 2, 2, 3, 4, 5, 6 }, 2, new int[] { 1, 2 })]
     public void Should_FindTopKFrequent(int[] nums, int topK, int[] expectedResult)
     {
         // Arrange
@@ -17,7 +17,7 @@ public class TopKFrequentTests
         var result = TopKFrequent.Solution(nums, topK);
 
         // Assert
-        Assert.That(result, Is.EqualTo(expectedResult));
+        Assert.Equal(expectedResult, result);
 
     }
 }

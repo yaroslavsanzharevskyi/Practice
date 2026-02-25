@@ -1,23 +1,22 @@
 
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class AtoiTests
 {
-    [TestCase("42", 42)]
-    [TestCase("-42", -42)]
-    [TestCase("1337c0d3", 1337)]
-    [TestCase("0-1", 0)]
-    [TestCase("words and 987", 0)]
-    [TestCase("000100", 100)]
-    [TestCase("   100", 100)]
-    [TestCase("-91283472332", -2147483648)]
-    [TestCase("3.123", 3)]
-    [TestCase("+-12", 0)]
-    [TestCase("  +  413", 0)]
-    // [TestCase("-91283472332", -2147483648)]
+    [Theory]
+    [InlineData("42", 42)]
+    [InlineData("-42", -42)]
+    [InlineData("1337c0d3", 1337)]
+    [InlineData("0-1", 0)]
+    [InlineData("words and 987", 0)]
+    [InlineData("000100", 100)]
+    [InlineData("   100", 100)]
+    [InlineData("-91283472332", -2147483648)]
+    [InlineData("3.123", 3)]
+    [InlineData("+-12", 0)]
+    [InlineData("  +  413", 0)]
     public void TransformToInt_ShouldTransformStringToInt(string numberAsString, int expectedNumber)
     {
         // Arrange
@@ -27,6 +26,6 @@ public class AtoiTests
         var result = sut.TransformToInt(numberAsString);
 
         // Assert
-        Assert.That(result, Is.EqualTo(expectedNumber));
+        Assert.Equal(expectedNumber, result);
     }
 }

@@ -1,14 +1,13 @@
 using DSA.Problems.Helpers;
 using DSA.Problems.Trees;
-using NUnit.Framework;
+using Xunit;
 
 namespace DSA.Problems.Tests.Trees;
 
 
-[TestFixture]
 public class BalancedTreeTests
 {
-    [Test]
+    [Fact]
     public void IsBalanced_ShouldReturnTrue_ForBalancedTree()
     {
         // Arrange
@@ -22,6 +21,6 @@ public class BalancedTreeTests
 
 
         // Assert
-        Assert.That(result, Is.False);
+        Assert.False(result);
     }
 }

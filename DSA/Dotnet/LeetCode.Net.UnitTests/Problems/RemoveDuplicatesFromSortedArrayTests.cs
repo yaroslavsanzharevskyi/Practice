@@ -1,17 +1,17 @@
 
 
 using System.Runtime.CompilerServices;
-using NUnit.Framework;
+using Xunit;
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class RemoveDuplicateFromSortedArrayTests
 {
-    [TestCase(new int[] {1,1}, 1)]
-    [TestCase(new int[]{0,1,1,1,2,2,3}, 4)]
-    [TestCase(new int[]{1,1,1,1,2,2,3}, 3)]
-    [TestCase(new int[]{1,1,1,1,1,1,1}, 1)]
-    [TestCase(new int[]{0,1,2,2,2,3,3}, 4)]
+    [Theory]
+    [InlineData(new int[] {1,1}, 1)]
+    [InlineData(new int[]{0,1,1,1,2,2,3}, 4)]
+    [InlineData(new int[]{1,1,1,1,2,2,3}, 3)]
+    [InlineData(new int[]{1,1,1,1,1,1,1}, 1)]
+    [InlineData(new int[]{0,1,2,2,2,3,3}, 4)]
     public void Should_RemoveDuplicates(int[] nums, int count)
     {
         // Arrange
@@ -19,6 +19,6 @@ public class RemoveDuplicateFromSortedArrayTests
         // Act
         var result = removeDuplicates.Solution(nums);
         // Assert
-        Assert.That(result, Is.EqualTo(count));
+        Assert.Equal(count, result);
     }   
 }

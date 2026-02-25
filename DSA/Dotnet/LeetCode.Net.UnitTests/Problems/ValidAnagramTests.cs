@@ -1,14 +1,14 @@
 
 
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
 
-[TestFixture]
 public class ValidAnagramTests 
 {
-    [TestCase("anagram","angaram", true)]
+    [Theory]
+    [InlineData("anagram","angaram", true)]
     public void Should_ValidAnagram(string s, string t, bool expectedResult)
     {
         // Arrange
@@ -18,10 +18,11 @@ public class ValidAnagramTests
         var actualResult = solution.Solution(s,t);
 
         // Assert
-        Assert.That(actualResult, Is.EqualTo(expectedResult));
+        Assert.Equal(expectedResult, actualResult);
     }
 
-    [TestCase("anagram","angaram", true)]
+    [Theory]
+    [InlineData("anagram","angaram", true)]
     public void Should_ValidAnagram_Fast(string s, string t, bool expectedResult)
     {
         // Arrange
@@ -31,6 +32,6 @@ public class ValidAnagramTests
         var actualResult = solution.Solution_Fast(s,t);
 
         // Assert
-        Assert.That(actualResult, Is.EqualTo(expectedResult));
+        Assert.Equal(expectedResult, actualResult);
     }
 }

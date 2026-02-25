@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using NUnit.Framework;
+using Xunit;
 
 namespace DSA.Problems.LinkedList.Tests;
 
 
-[TestFixture]
 public class ReoderLinkedListTests
 {
-    [Test]
+    [Fact]
     public void ReorderList_ShouldReorderLinkedListCorrectly()
     {
         // Arrange
@@ -60,12 +59,12 @@ public class ReoderLinkedListTests
 
         while (currentExpected != null && currentActual != null)
         {
-            Assert.That(currentActual.val, Is.EqualTo(currentExpected.val));
+            Assert.Equal(currentExpected.val, currentActual.val);
             currentExpected = currentExpected.next;
             currentActual = currentActual.next;
         }
 
-        Assert.That(currentExpected, Is.Null);
-        Assert.That(currentActual, Is.Null);
+        Assert.Null(currentExpected);
+        Assert.Null(currentActual);
     }
 }

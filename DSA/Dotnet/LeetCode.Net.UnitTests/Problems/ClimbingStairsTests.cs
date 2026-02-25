@@ -1,24 +1,17 @@
 using LeetCode.Problems.DynamicProgramming;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class ClimbingStairsTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
-    [Test]
+    [Fact]
     public void Test1()
     {
         var solution = new ClimbingStairsSolution();
 
-
         var result = solution.ClimbStairs(2);
 
-        Assert.That(result, Is.EqualTo(2));
+        Assert.Equal(2, result);
     }
 }

@@ -1,12 +1,12 @@
-using NUnit.Framework;
+using Xunit;
 using DSA.Problems.SlidingWindow;
 
 namespace DSA.Problems.SlidingWindow.Tests;
 
-[TestFixture]
 public class LongestRepeatingCharacterReplacementTests
 {
-    [TestCase("ABCDZZZ", 3, 6)]
+    [Theory]
+    [InlineData("ABCDZZZ", 3, 6)]
     public void CharacterReplacement_ShouldReturnExpectedResult(string s, int k, int expected)
     {
         // Arrange
@@ -16,6 +16,6 @@ public class LongestRepeatingCharacterReplacementTests
         var result = solver.CharacterReplacement(s, k);
 
         // Assert
-        Assert.That(expected, Is.EqualTo(result));
+        Assert.Equal(expected, result);
     }
 }

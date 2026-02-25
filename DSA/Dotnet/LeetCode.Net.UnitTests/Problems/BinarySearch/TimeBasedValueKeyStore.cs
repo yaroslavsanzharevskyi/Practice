@@ -1,11 +1,10 @@
 
 using DSA.Problems.BinarySearch;
-using NUnit.Framework;
+using Xunit;
 
-[TestFixture]
 public class TimeBasedValueKeyStoreTests
 {
-    [Test]
+    [Fact]
     public void Get_Should_Return()
     {
         TimeMap timeMap = new TimeMap();
@@ -16,10 +15,10 @@ public class TimeBasedValueKeyStoreTests
         timeMap.Set("alice", "sad", 3);    // store the key "alice" and value "sad" along with timestamp = 3.
         var result = timeMap.Get("alice", 3);
 
-        Assert.That(result, Is.EqualTo(expectedResult));      // return "sad"
+        Assert.Equal(expectedResult, result);      // return "sad"
     }
 
-    [Test]
+    [Fact]
     public void Get_ShouldReturn_WhenNoExactTimeStampIsPresent()
     {
         TimeMap timeMap = new TimeMap();
@@ -34,6 +33,6 @@ public class TimeBasedValueKeyStoreTests
         timeMap.Set("alice", "sad", 6);    // store the key "alice" and value "sad" along with timestamp = 3.
         var result = timeMap.Get("alice", 3);
 
-        Assert.That(result, Is.EqualTo(expectedResult));      // return "sad"
+        Assert.Equal(expectedResult, result);      // return "sad"
     }
 }

@@ -10,7 +10,6 @@ public class Interval
         this.start = start;
         this.end = end;
     }
-    s
 }
 
 public class MeetingRooms

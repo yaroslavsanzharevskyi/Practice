@@ -1,13 +1,12 @@
 
 using LeetCode.Utills;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class MergeKListsTests
 {
-    [Test]
+    [Fact]
     public void Should_MergeKLists()
     {
         // Arrange
@@ -20,6 +19,6 @@ public class MergeKListsTests
         var flatResult = ListFunctions.BuildArrayFromList(result);
 
         // Assert 
-        Assert.That(flatResult, Is.EqualTo(new[] { 1, 1, 2, 3, 4, 4, 5, 6 }));
+        Assert.Equal(new[] { 1, 1, 2, 3, 4, 4, 5, 6 }, flatResult);
     }
 }

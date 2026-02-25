@@ -1,13 +1,13 @@
 using LeetCode.Problems.TwoPointers;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class ValidPalindromeTests
 {
-    [TestCase("1:2##32@%1$", true)]
-    [TestCase("sobaka", false)]
+    [Theory]
+    [InlineData("1:2##32@%1$", true)]
+    [InlineData("sobaka", false)]
     public void ShouldIdentifyPalindrome(string s, bool expectedResult)
     {
         // Arrange
@@ -16,6 +16,6 @@ public class ValidPalindromeTests
         var actualResult = validPalindrome.IsValid(s);
 
         // Assert
-        Assert.That(actualResult, Is.EqualTo(expectedResult));
+        Assert.Equal(expectedResult, actualResult);
     }
 }

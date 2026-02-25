@@ -1,12 +1,11 @@
 using LeetCode.Problems.ArraysAndHashing;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class ValidSudokuTests
 {
-    [Test]
+    [Fact]
     public void Should_IdentifyIfSudokuIsValid()
     {
         // Arrange
@@ -26,6 +25,6 @@ public class ValidSudokuTests
         var result = sudokuValidator.IsValidSudoku(board);
 
         // Assert
-        Assert.That(result, Is.EqualTo(true));
+        Assert.True(result);
     }
 }

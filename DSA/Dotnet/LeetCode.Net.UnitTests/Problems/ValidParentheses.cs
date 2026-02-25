@@ -1,13 +1,13 @@
 using LeetCode.Problems.Stack;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class ValidParenthesesTests
 {
-    [TestCase("{}{}{}", true)]
-    [TestCase("(]", false)]
+    [Theory]
+    [InlineData("{}{}{}", true)]
+    [InlineData("(]", false)]
     public void Should_ReturnCorrectResult(string s, bool expectedResult)
     {
         // Arrange
@@ -15,6 +15,6 @@ public class ValidParenthesesTests
         // Act
         var result = parenthesesValidator.IsValid(s);
         // Assert
-        Assert.That(result, Is.EqualTo(expectedResult));
+        Assert.Equal(expectedResult, result);
     }
 }

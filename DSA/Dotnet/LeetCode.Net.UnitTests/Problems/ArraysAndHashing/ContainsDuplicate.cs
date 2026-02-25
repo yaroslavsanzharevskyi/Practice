@@ -1,12 +1,12 @@
-using NUnit.Framework;
+using Xunit;
 
 namespace DSA.Problems.Tests;
 
-[TestFixture]
 public class ContainsDuplicateTests
 {
-    [TestCase(new[] { 1, 2, 3, 1 }, true)]
-    [TestCase(new[] { 1, 2, 3, 4 }, false)]
+    [Theory]
+    [InlineData(new[] { 1, 2, 3, 1 }, true)]
+    [InlineData(new[] { 1, 2, 3, 4 }, false)]
     public void Should_ContainsDuplicate(int[] nums, bool expected)
     {
         // Arrange
@@ -14,6 +14,6 @@ public class ContainsDuplicateTests
         // Act
         var result = containsDuplicate.Solution(nums);
         // Assert
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.Equal(expected, result);
     }
 }

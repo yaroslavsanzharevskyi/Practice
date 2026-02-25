@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class EncodeDecodeTests
 {
 
-    [Test]
+    [Fact]
     public void Should_EncodeAndDecode()
     {
         // Arrange
@@ -25,6 +24,6 @@ public class EncodeDecodeTests
         var encodedString = solution.Encode(expectedCollection);
         var decodedStrings = solution.Decode(encodedString);
         // Assert
-        Assert.That(decodedStrings, Is.EquivalentTo(expectedCollection));
+        Assert.Equal(expectedCollection, decodedStrings);
     }
 }

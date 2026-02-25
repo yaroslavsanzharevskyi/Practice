@@ -1,12 +1,11 @@
 using DSA.Problems.BinarySearch;
-using NUnit.Framework;
+using Xunit;
 
 namespace DSA.Problems.Tests.BinarySearch;
 
-[TestFixture]
 public class SearchInRotatedSortedArrayTests
 {
-    [Test]
+    [Fact]
     public void Search_ShouldReturnCorrectIndex_WhenTargetExists()
     {
         // Arrange
@@ -19,10 +18,10 @@ public class SearchInRotatedSortedArrayTests
         var actualIndex = solution.Search(nums, target);
 
         // Assert
-        Assert.That(actualIndex, Is.EqualTo(expectedIndex));
+        Assert.Equal(expectedIndex, actualIndex);
     }
     
-    [Test]
+    [Fact]
     public void Search_ShouldReturnCorrectIndex_WhenTargetExists2()
     {
         // Arrange
@@ -35,7 +34,7 @@ public class SearchInRotatedSortedArrayTests
         var actualIndex = solution.Search(nums, target);
 
         // Assert
-        Assert.That(actualIndex, Is.EqualTo(expectedIndex));
+        Assert.Equal(expectedIndex, actualIndex);
     }
 
     

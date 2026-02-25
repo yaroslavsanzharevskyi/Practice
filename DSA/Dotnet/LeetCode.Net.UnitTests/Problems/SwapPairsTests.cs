@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Leetcode.Problems;
 using LeetCode.Utills;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class SwapPairsTests
 {
-    [TestCase(new[] { 1, 2, 3, 4 }, new[] { 2, 1, 4, 3 })]
+    [Theory]
+    [InlineData(new[] { 1, 2, 3, 4 }, new[] { 2, 1, 4, 3 })]
     public void Should_SwapPairs(int[] inputArray, int[] expectedResult)
     {
         // Arrange
@@ -20,6 +20,6 @@ public class SwapPairsTests
         var result = swapSolution.Solution(testList);
         var flatResult = ListFunctions.BuildArrayFromList(result);
         // Assert
-        Assert.That(flatResult, Is.EqualTo(expectedResult));
+        Assert.Equal(expectedResult, flatResult);
     }
 }

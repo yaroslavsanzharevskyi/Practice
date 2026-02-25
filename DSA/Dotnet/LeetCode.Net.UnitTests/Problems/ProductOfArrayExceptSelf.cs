@@ -1,12 +1,11 @@
 using LeetCode.Problems.ArraysAndHashing;
-using NUnit.Framework;
+using Xunit;
 
 namespace LeetCode.Problems.Tests;
 
-[TestFixture]
 public class ProductOfArrayExceptSelfTests
 {
-    [Test]
+    [Fact]
     public void Should_ReturnCorrectProduct()
     {
         // Arrange
@@ -15,6 +14,6 @@ public class ProductOfArrayExceptSelfTests
         // Act
         var result = solution.Solution(nums);
         // Assert
-        Assert.That(result, Is.EqualTo(new int[] { 24, 16, 8, 6 }));
+        Assert.Equal(new int[] { 24, 16, 8, 6 }, result);
     }
 }
